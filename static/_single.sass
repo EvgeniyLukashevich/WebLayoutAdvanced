@@ -1,0 +1,244 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.single
+    position: relative
+    background-color: #f7f7f7
+
+    &__left
+        cursor: pointer
+        position: absolute
+        top: 50%
+        left: 0
+        border: none
+        color: #fff
+        font-size: 14px
+        transform: translateY(-50%)
+        padding: 16px 20px 16px 16px
+        background-color: #d8d8d8
+        transition: $transition
+        &:hover
+            padding: 16px 20px 16px 24px
+            @extend %hoverButtonGray
+        &:active
+            @extend %activeButtonWhite
+    &__right
+        cursor: pointer
+        position: absolute
+        top: 50%
+        right: 0
+        border: none
+        color: #fff
+        font-size: 14px
+        transform: translateY(-50%)
+        padding: 16px 16px 16px 20px
+        background-color: #d8d8d8
+        transition: $transition
+        &:hover
+            padding: 16px 20px 16px 24px
+            @extend %hoverButtonGray
+        &:active
+            @extend %activeButtonWhite
+    &__area
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 777px
+
+.description
+    position: relative
+    &__area
+        margin-top: -64px
+        z-index: 1
+        background-color: #fff
+        padding-bottom: 122px
+        border: $borderHeader
+    &__title
+        margin-top: 72px
+        @include text3(14px, 700, $colorStylish)
+        line-height: 1.71
+        text-align: center
+        color: $colorStylish
+        &__sub
+            @include text3(18px, 900, #4d4d4d)
+            line-height: 1.33
+    &__line
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 15px 0 18px
+        &__red
+            width: 64px
+            height: 3px
+            background-color: $colorStylish
+        &__grey
+            width: 42px
+            height: 1px
+            background-color: #eaeaea
+    &__info
+        margin-top: 66px
+        margin-bottom: 28px
+        padding: 0 248px
+        @include text3(14px, 400, #5e5e5e)
+        line-height: 1.71
+        text-align: center
+    &__material
+        display: flex
+        justify-content: center
+        @include text3(14px, 700, #b9b9b9)
+        span
+            color: #2f2f2f
+        p:not(:last-child)
+            margin-right: 44px
+    &__price
+        margin-top: 36px
+        text-align: center
+        @include text3(24px, 700, $colorStylish)
+    &__box
+        width: 100%
+        display: flex
+        justify-content: space-between
+    &__form
+        margin: 43px 250px 0
+        border-top: $borderHeader
+        padding-top: 64px
+    &__color
+        @include text3(14px, 700, #2f2f2f)
+    &__size
+        @include text3(14px, 700, #2f2f2f)
+        select
+            cursor: pointer
+            outline: none
+            margin-top: 16px
+            width: 144px
+            padding: 8px
+            @include text3(13px, 400, #bcbcbc)
+            text-transform: uppercase
+            border: $borderHeader
+        option
+            padding: 5px
+    &__quantity
+        @include text3(14px, 700, #2f2f2f)
+        input
+            outline: none
+            width: 144px
+            margin-top: 16px
+            padding: 8px
+            border: $borderHeader
+            @include text3(13px, 400, #bcbcbc)
+    &__button-box
+        display: flex
+        justify-content: center
+    &__button
+        cursor: pointer
+        width: 536px
+        height: 56px
+        @include text3(16px, 700, $colorStylish)
+        text-align: center
+        margin-top: 28px
+        border: 1px solid $colorStylish
+        transition: $transition
+        background-color: #fff
+        i
+            font-size: 20px
+            margin-right: 15px
+        &:hover
+            @extend %hoverButtonStylish
+        &:active
+            @extend %activeButtonStylish
+
+.select
+    cursor: pointer
+    margin: 0 auto
+    position: relative
+    width: 144px
+    padding: 8px
+    text-transform: capitalize
+    margin-top: 16px
+    border: 1px solid #eaeaea
+    @include text3(13px, 400, #bcbcbc)
+    padding-right: 4px
+    &.is-active .select__body
+        display: block
+    &__header
+        cursor: pointer
+        display: flex
+    &__current
+        font-size: 13px
+        display: flex
+    &__icon
+        align-items: center
+        display: flex
+        flex-shrink: 0
+        flex-grow: 1
+        justify-content: flex-end
+        width: 40px
+        .fa-angle-down
+            font-size: 16px
+            font-weight: 700
+    &__body
+        width: 144px
+        border: 1px solid #eaeaea
+        border-top: 0
+        display: none
+        left: -1px
+        position: absolute
+        top: 100%
+        z-index: 1
+        background-color: #fff
+    &__item
+        cursor: pointer
+        font-size: 13px
+        line-height: 24px
+        padding: 8px
+        display: flex
+        &:hover
+            background-color: #f2f2f2
+        &-color
+            display: block
+            width: 12px
+            height: 12px
+            background-color: $colorStylish
+            align-self: center
+            margin-right: 10px
+        &-red
+            display: block
+            width: 12px
+            height: 12px
+            background-color: $colorStylish
+            align-self: center
+            margin-right: 10px
+        &-yellow
+            display: block
+            width: 12px
+            height: 12px
+            background-color: yellow
+            align-self: center
+            margin-right: 10px
+        &-blue
+            display: block
+            width: 12px
+            height: 12px
+            background-color: blue
+            align-self: center
+            margin-right: 10px
+        &-black
+            display: block
+            width: 12px
+            height: 12px
+            background-color: #000
+            align-self: center
+            margin-right: 10px
+
+.other
+    &__title
+        margin-top: 120px
+        @include text3(24px, 900, #4d4d4d)
+        text-align: center
+    &__area
+        display: flex
+        justify-content: space-between
+        padding-top: 72px
+        padding-bottom: 72px
+    

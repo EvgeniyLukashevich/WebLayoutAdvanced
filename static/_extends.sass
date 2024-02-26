@@ -1,0 +1,47 @@
+@import "vars"
+@import "mixins"
+
+%menuHeader
+    margin-bottom: 4px
+    border-bottom: $borderHeader
+    @include text(14px, 32px, 700, 0.025em, $colorDropHeader)
+
+%menuLink
+    padding-left: 4px
+    @include text(14px, 28px, 400, 0.025em, $colorDropLink)
+    transition: all .2s
+    &:hover
+        color: $colorStylish
+
+%hoverButtonStylish
+    border-color: $colorStylish
+    background-color: $colorStylish
+    color: #fff
+
+%hoverButtonWhite
+    border-color: $colorStylish
+    background-color: #fff
+    color: $colorStylish
+
+%hoverButtonGray
+    border-color: $colorButtonGray
+    background-color: $colorButtonGray
+    color: $colorStylish
+
+%activeButtonWhite
+    border-color: rgba(241, 109, 127, 100)
+    color: $colorStylish
+    background-color: rgba(241, 109, 127, .24)
+
+%activeButtonStylish
+    border-color: rgba(241, 109, 127, 0)
+    color: #fff
+    background-color: rgba(241, 109, 127, 0.8)
+
+%inputArea
+    width: 355px
+    padding: 14px 12px
+    border: $borderHeader
+    outline-color: $colorStylish
+    &::placeholder
+        color: #b1b1b1

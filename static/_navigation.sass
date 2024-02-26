@@ -1,0 +1,83 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.nav-area
+    position: relative
+    display: flex
+    justify-content: center
+    gap: 48px
+    padding-top: 16px
+    padding-bottom: 16px
+    @include text2(14px, 26px, 700, $colorText)
+    &__link
+        color: $colorText
+        transition: $transition
+        &:hover
+            color: $colorStylish
+        &:active
+            transform: scale(.9)
+        
+.nav-details
+    &:not([open]) &__summary ~ *
+        opacity: .1
+    &[open] &__summary
+        color: $colorStylish
+    &__summary
+        cursor: pointer
+        outline: none
+        display: block
+        transition: $transition
+        &:hover
+            color: $colorStylish
+
+
+.mega-menu
+    z-index: 199
+    position: absolute
+    top: 52px
+    right: $sidePadding
+    background-color: #fff
+    padding: 20px 24px
+    display: flex
+    gap: 46px
+    box-shadow: $shadowDrop
+    border-radius: 5px
+    &__box
+        position: relative
+        width: 235px
+        display: flex
+        flex-direction: column
+        gap: 20px
+        &__sale-link
+            position: absolute
+            bottom: 0
+            right: 0
+            transition: $transition
+            &__img
+                width: 255px
+                transition: $transition
+            &__text
+                position: absolute
+                bottom: 12px
+                right: 10px
+                @include text(22px, 28px, 900, 0.025em, #fff)
+                transition: $transition
+            &:active &__img
+                transform: scale(.7)
+            &:active &__text
+                transform: scale(1.7)
+            &:hover &__img
+                filter: brightness(.7)
+            &:hover &__text
+                color: $colorStylish 
+        &__item
+            display: flex
+            flex-direction: column
+            gap: 3px
+            &__header
+                @extend %menuHeader
+                padding-bottom: 2px
+            &__link
+                @extend %menuLink
+                padding-left: 0

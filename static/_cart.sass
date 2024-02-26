@@ -1,0 +1,182 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.cart
+    &__area
+        display: flex
+        justify-content: space-between
+        border-bottom: $borderHeader
+        margin-bottom: 22px
+    &__title
+        display: flex
+        justify-content: space-between
+        padding-top: 90px
+        padding-bottom: 25px
+        &-right
+            width: 625px
+    &__column
+        @include text3(13px, 700, $colorText)
+        &-width
+            width: 300px
+    &__item
+        display: flex
+        justify-content: space-between
+        @include text3(13px, 400, #656565)
+        border-bottom: $borderHeader
+        padding-bottom: 24px
+        margin-bottom: 24px
+    &__product
+        cursor: pointer
+        padding: 2px
+        display: flex
+        min-width: 316px
+        transition: $transition
+        &:hover .cart__img
+            filter: brightness(.9)
+        &:hover .cart__description__title
+            color: $colorStylish
+    &__img
+        transition: $transition
+    &__description
+        padding-left: 20px
+        &__title
+            padding-top: 12px
+            padding-bottom: 28px
+            @include text3(13px, 700, $colorText)
+            transition: $transition
+        &__text
+            color: #575757
+            line-height: 1.54
+            span
+                padding-left: 6px
+                font-weight: 300
+                color: #6f6e6e
+    &__data
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-right: 14px
+        width: 595px
+    &__quantity
+        &__input
+            width: 48px
+            @include text3(13px, 400, #575757)
+            padding: 10px 8px
+            border: $borderHeader
+            text-align: center
+            outline-color: $colorStylish
+    &__action
+        &__link
+            color: #656565
+            transition: $transition
+            &:hover
+                color: $colorStylish
+            &:active
+                color: $colorTextGray
+
+    &__buttons
+        padding-top: 20px
+        padding-bottom: 64px
+        display: flex
+        justify-content: space-between
+    &__button
+        background-color: #fff
+        cursor: pointer
+        padding: 20px 40px
+        border: $borderHeader
+        @include text3(14px, 700, #4a4a4a)
+        transition: $transition
+        &:hover
+            @extend %hoverButtonGray
+        &:active
+            @extend %activeButtonWhite
+    &__information
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        margin-bottom: 80px
+    &__adress
+        &__title
+            @include text3(16px, 700, $colorText)
+            padding-bottom: 24px
+        &__form
+            display: flex
+            flex-direction: column
+            &__country
+                @extend %inputArea
+                @include text3(13px, 300, #b1b1b1)
+                margin-bottom: 20px
+            &__text
+                @extend %inputArea
+                @include text3(13px, 300, $colorText)
+                margin-bottom: 20px
+            &__button
+                background-color: #fff
+                cursor: pointer
+                width: 100px
+                padding: 12px 0
+                border: $borderHeader
+                @include text3(11px, 700, #4a4a4a)
+                transition: $transition
+                &:hover
+                    @extend %hoverButtonGray
+                &:active
+                    @extend %activeButtonWhite
+    &__discount
+        &__subtitle
+            @include text3(14px, 400, $colorText)
+            padding-bottom: 24px
+        &__form
+            display: flex
+            flex-direction: column
+            &__text
+                @extend %inputArea
+                @include text3(13px, 300, $colorText)
+                margin-bottom: 20px
+            &__button
+                cursor: pointer
+                background-color: #fff
+                width: 120px
+                padding: 12px 0
+                border: $borderHeader
+                @include text3(11px, 700, #4a4a4a)
+                transition: $transition
+                &:hover
+                    @extend %hoverButtonGray
+                &:active
+                    @extend %activeButtonWhite
+    &__total
+        width: 360px
+        height: 90%
+        background-color: #f5f3f3
+        padding: 40px 44px
+        &__subtitle
+            @include text3(11px, 400, #4a4a4a)
+            text-align: right
+            margin-bottom: 14px
+            span
+                margin-left: 20px
+        &__title
+            @include text3(16px, 900, $colorText)
+            text-align: right
+            padding-bottom: 22px
+            margin-bottom: 18px
+            border-bottom: $borderHeader
+            span
+                margin-left: 20px
+                color: $colorStylish
+        &__button
+            display: flex
+            justify-content: center
+            width: 276px
+            @include text3(16px, 700, #fff)
+            transition: $transition
+            padding: 20px 
+            background-color: $colorStylish
+            border: 1px solid $colorStylish
+            &:hover
+                @extend %hoverButtonGray
+            &:active
+                @extend %activeButtonWhite
+

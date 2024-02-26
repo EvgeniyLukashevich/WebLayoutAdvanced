@@ -1,0 +1,245 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.top-content-background
+    width: 100%
+    height: 614px
+    background-image: url("../img/top-back.jpg")
+    // background-size: cover
+    background-position: center
+
+.top-content-area
+    padding-top: 224px
+    display: flex
+    align-items: center
+    gap: 12px
+
+.top-content-line
+    width: 12px
+    height: 94px
+    background-color: $colorStylish
+
+.top-content-header
+    display: flex
+    flex-direction: column
+    @include text(60px, 1.1, 900, 0.025em, $colorText)
+    &__bottom
+        font-size: 40px
+        line-height: 1.3
+        &__stylish
+            color: $colorStylish
+
+.categories-area
+    padding-top: 98px
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(560px, 1fr))
+    justify-items: center
+    grid-gap: 20px
+    grid-auto-flow: row
+    &__large-box
+        width: 560px
+        height: 542px
+        grid-row: span 2
+    &__small-box
+        width: 560px
+        height: 261px
+
+.categories-link
+    display: block
+    position: relative
+    &__img
+        width: 100%
+        transition: $transition
+    &__title
+        display: flex
+        flex-direction: column
+        position: absolute
+        top: 26px
+        left: 0px
+        padding: 16px 20px
+        background-color: #fff
+        @include text(18px, 1.2, 900, 0.025em, $colorText)
+        transition: $transition
+        &__stylish
+            font-size: 30px
+            color: $colorStylish
+            transition: $transition
+    &:hover &__img
+        filter: brightness(.7)
+    &:hover &__title
+        background-color: $colorStylish
+        color: #fff
+        box-shadow: $shadowDrop
+    &:hover &__title__stylish
+        color: #fff
+    &:active &__img
+        filter: brightness(.3)
+
+.cards-area
+    padding-top: 100px
+    display: flex
+    flex-direction: column
+    align-items: center
+    &__text
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 4px
+        &__title
+            @include text3(30px, 700, $colorText)
+        &__pre-title
+            @include text3(14px, 400, #9f9f9f)
+
+.cards-box
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 30px
+    padding-top: 60px
+
+.cards-item
+    max-width: 261px
+    margin-bottom: 10px
+    align-items: center
+    &:hover
+        box-shadow: $shadowItem
+    &:hover .cards-img-box__img
+        filter: brightness(.5) contrast(.7)
+    &:hover .cards-img-box__button
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 8px
+
+.cards-img-box
+    height: 280px
+    align-items: flex-end
+    position: relative
+    &__img
+        max-width: 261px
+        transition: $transition
+    &__button
+        cursor: pointer
+        display: none
+        position: absolute
+        width: 50%
+        top: 35%
+        left: 25%
+        padding: 8px 0
+        border: 1px solid #fff
+        background: none
+        @include text3(13px, 700, #fff)
+        transition: $transition
+        &__cart
+            width: 23px
+            filter: brightness(0) invert(1)
+            transition: $transition
+        &:hover
+            border-color: $colorStylish
+            background-color: $colorStylish
+            box-shadow: $shadowDrop
+        &:active
+            box-shadow:4px 4px 16px 0px rgba(241, 109, 127, 0.15)
+            background-color: rgba(241, 109, 127, 0.5)
+        &:active &__cart
+            transform: translate(0%, 15%) rotate(15deg)
+
+.cards-link
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 16px
+    min-height: 84px
+    padding: 20px 16px
+    border-top: none
+    &__title
+        @include text3(13px, 900, $colorText)
+        transition: $transition
+    &__price
+        @include text3(16px, 700, $colorStylish)
+    &:hover &__title
+        color: $colorStylish
+    &:active &__title
+        transform: translateY(36%)
+
+.browse-button
+    margin-top: 50px
+    width: 212px
+    height: 48px
+    background-color: $colorStylish
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 2px solid $colorStylish
+    transition: $transition
+    @include text3(16px, 700, #fff)
+    &__icon
+        font-size: 12px
+        padding-left: 8px
+        padding-top: 4px
+    &:hover
+        @extend %hoverButtonWhite
+    &:active
+        @extend %activeButtonWhite
+
+.sale-area
+    max-width: 100%
+    height: 529px
+    margin-top: 113px
+    margin-bottom: 96px
+    position: relative
+
+.sale-left
+    width: 767px
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    &__img
+        width: 100%
+    &__shadow
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+    &__title
+        position: absolute
+        top: 28%
+        left: 5%
+        @include text3(54px, 700, #fff)
+        line-height: 0.7
+        &__stylish
+            color: $colorStylish
+        &__smaller
+            font-size: 32px
+
+.sale-right
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 374px
+    height: 100%
+    display: flex
+    padding-left: 36px
+    padding-right: 43px
+    padding-top: 48px
+    padding-bottom: 66px
+    background-color: $colorText
+
+.lure-item
+    display: flex
+    align-items: flex-start
+    gap: 30px
+    &__img1
+        object-fit: none
+    &__info
+        &__title
+            padding-top: 4px
+            @include text3(20px, 700, #fbfbfb)
+        &__text
+            padding-top: 12px
+            @include text2(14px, 24px, 300, #fbfbfb)

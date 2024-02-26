@@ -1,0 +1,257 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.header
+    padding: 24px 0
+    border-bottom: 1px solid #ececec
+
+.header-area
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.header-left
+    display: flex
+    align-items: center
+
+.header-right
+    display: flex
+
+.logo-link
+    display: flex
+    align-items: center
+    gap: 12px
+    transition: all .3s
+    padding-right: 36px
+    &__img
+        width: 59px
+    &__text
+        transition: all .3s
+        padding-top: 4px
+        display: flex
+        @include text(27px, 32px, 300, 0.025em, $colorText)
+        &__stylish
+            color: $colorStylish
+            line-height: 31px
+            font-weight: 900
+    &:hover &__text
+        color: $colorStylish
+    &:active
+        transform: scale(.9)
+
+.search-box
+    display: flex
+
+.search-details
+    position: relative
+    &[open] &__summary
+        color: $colorStylish
+        // border-color: $colorStylish
+    &[open] &__summary__icon
+        transform: translate(25%, 15%) rotate(180deg)
+        color: $colorStylish
+    &__summary
+        cursor: pointer
+        outline: none
+        display: block
+        background-color: #cdcdcc
+        background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%)
+        padding: 2px 8px 2px 12px
+        border: $borderHeader
+        border-radius: 3px 0px 0px 3px
+        @include text(14px, 32px, 300, 0.025em, $colorText)
+        transition: all .3s
+        // &:active
+        //     filter: brightness(.96)
+        &:hover
+            color: $colorStylish
+        &:hover &__icon
+            color: $colorStylish
+        &__icon
+            padding-left: 4px
+            color: #838383
+            transition: all .3s
+    &__arrow
+        position: absolute
+        top: 74%
+        left: 66%
+        width: 0
+        height: 0
+        border-left: 16px solid transparent
+        border-right: 16px solid transparent
+        border-bottom: 16px solid #fff
+    &__drop
+        z-index: 200
+        position: absolute
+        padding: 8px 16px
+        top: 92%
+        left: -2%
+        width: 262px
+        background-color: #ffffff
+        // border: $borderHeader
+        border-radius: 5px
+        box-shadow: $shadowDrop
+        &__item
+            padding-bottom: 8px
+            display: flex
+            flex-direction: column
+            gap: 3px
+            &__header
+                @extend %menuHeader
+            &__link
+                @extend %menuLink
+
+.search-input
+    padding-left: 16px
+    width: 285px
+    border: $borderHeader
+    border-left: none
+    background-color: #fff
+    @include text(14px, 32px, 300, 0.025em, #a4a4a4)
+    &:focus
+        outline: none
+
+.search-button
+    cursor: pointer
+    color: #a4a4a4
+    padding: 0 12px
+    background-color: #fff
+    border: $borderHeader
+    border-left: none
+    border-radius: 0px 3px 3px 0px
+    transition: all .3s
+    &:active
+        filter: brightness(.96)
+    &:hover
+        color: $colorStylish
+
+.cart-details
+    position: relative
+    &[open] &__summary
+        transform: translate(0%, 15%) rotate(40deg)
+    &__summary
+        cursor: pointer
+        outline: none
+        display: block
+        padding: 0 24px
+        padding-top: 8px
+        transition: all .3s
+        &:hover
+            opacity: .7
+    &__drop
+        z-index: 200
+        width: 262px
+        position: absolute
+        top: 150%
+        right: $cartLeftPos
+        padding: 0 16px
+        background-color: #fff
+        // border: $borderHeader
+        border-radius: 5px
+        box-shadow: $shadowDrop
+
+.cart-item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-bottom: $borderHeader
+    padding-bottom: 16px
+    padding-top: 16px
+    &:hover &__left__img
+        filter: brightness(.9)
+    &:hover &__left__info__title
+        color: $colorStylish
+    &__left
+        padding-right: 32px
+        display: flex
+        gap: 14px
+        &:active &__img
+            filter: brightness(.8)
+        &__img
+            max-width: 72px
+            transition: $transition
+        &__info
+            padding-top: 14px
+            &__title
+                @include text2(12px, 1.2px, 900, $colorText)
+                transition: $transition
+            &__stars
+                padding-top: 16px
+                font-size: 9px
+                color: #e4af48
+            &__price
+                padding-top: 16px
+                @include text(12px, 1.2px, 700, normal, $colorStylish)
+    &__remove
+        cursor: pointer
+        background: none
+        border: none
+        font-size: 15px
+        color: #c0c0c0
+        transition: all .3s
+        &:hover
+            color: $colorStylish
+        &:active
+            color: $colorTextGray
+
+.cart-total-price
+    height: 48px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__text, &__price
+        @include text2(16px, 1.2px, 700, $colorText)
+
+.cart-links
+    padding-top: 16px
+    padding-bottom: 20px
+    display: flex
+    flex-direction: column
+    gap: 12px
+    &__checkout
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 225px
+        height: 50px
+        @include text2(14px, 1.2px, 700, $colorStylish)
+        border: 1px solid $colorStylish
+        transition: all .3s
+        &:hover
+            @extend %hoverButtonStylish
+        &:active
+            @extend %activeButtonStylish
+    &__goto
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 225px
+        height: 50px
+        @include text2(14px, 1.2px, 700, $colorDropLink)
+        border: 1px solid #eaeaea
+        transition: all .3s
+        &:hover
+            @extend %hoverButtonGray
+        &:active
+            @extend %activeButtonWhite
+
+.account-link
+    @include text(15px, 32px, 400, 0.025em, #fff)
+    width: 130px
+    height: 38px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $colorStylish
+    border: 2px solid $colorStylish
+    border-radius: 3px
+    transition: all .3s
+    &:hover
+        @extend %hoverButtonWhite
+    &:active
+        @extend %activeButtonWhite
+    &__icon
+        font-size: 14px
+        padding-top: 1px
+        padding-left: 8px

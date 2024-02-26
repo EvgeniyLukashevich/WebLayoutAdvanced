@@ -1,0 +1,129 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.checkout
+    padding-top: 54px
+    margin-bottom: 92px
+    &__area
+        margin-top: 32px
+        &:last-child
+            margin-bottom: 92px
+    &__title
+        @include text3(16px, 700, $colorText)
+        padding-bottom: 30px
+        border-bottom: $borderHeader
+        cursor: pointer
+        span
+            margin-right: 10px
+        &.active
+            padding-bottom: 0
+            border-bottom: none
+        &.active ~ .checkout__content
+            display: flex
+            padding-bottom: 80px
+            border-bottom: $borderHeader
+    &__content
+        display: none
+        &__guest
+            flex-basis: 48%
+            padding-left: 36px
+            &__title
+                @include text3(13px, 700, $colorText)
+                padding-top: 32px
+                padding-bottom: 16px
+            &__text
+                @include text3(13px, 400, $colorTextGray)
+                padding-bottom: 28px
+        &__registered
+            &__title
+                padding-top: 32px
+                padding-bottom: 16px
+                @include text3(13px, 700, $colorText)
+            &__text
+                padding-bottom: 28px
+                @include text3(13px, 400, #b3b2b2)
+
+.form
+    &__guest
+        &-box
+            display: flex
+            padding-bottom: 20px
+        &__input
+            cursor: pointer
+            align-self: center
+        &__label
+            cursor: pointer
+            padding-left: 12px
+            @include text3(12px, 400, $colorText)
+        &__link
+            display: block
+            @include text3(13px, 400, $colorTextGray)
+            transition: $transition
+            &::before
+                content: "\f101"
+                font-family: "fontAwesome"
+                font-size: 10px
+                line-height: 2.4
+                padding-right: 4px
+            &:hover
+                color: $colorStylish
+        &__button
+            cursor: pointer
+            margin-top: 36px
+            padding: 16px 56px
+            border: 1px solid #eaeaea
+            @include text3(14px, 700, #4a4a4a)
+            background-color: #fff
+            transition: $transition
+            &:hover
+                @extend %hoverButtonGray
+            &:active
+                @extend %activeButtonWhite
+    &__registered
+        &__info
+            padding-bottom: 16px
+            @include text3(12px, 400, $colorText)
+            sup
+                vertical-align: baseline
+            span
+                padding-left: 2px
+                color: #ff0d0d
+                font-size: 17px
+        &__input
+            width: 390px
+            margin-bottom: 20px
+            padding: 12px
+            border: solid 1px #eaeaea
+            @include text3(16px, 400, $colorText)
+            &:focus
+                outline: 2px solid $colorStylish
+        &__required
+            margin-bottom: 36px
+            @include text3(13px, 400, #ff0d0d)
+            sup
+                vertical-align: baseline
+            span
+                padding-left: 2px
+                color: #ff0d0d
+                font-size: 17px
+        &__button
+            cursor: pointer
+            border: 1px solid #eaeaea
+            padding: 16px 56px
+            @include text3(14px, 700, #4a4a4a)
+            background-color: #fff
+            margin-right: 32px
+            transition: $transition
+            &:hover
+                @extend %hoverButtonGray
+            &:active
+                @extend %activeButtonWhite
+        &__link
+            @include text3(14px, 700, $colorText)
+            transition: $transition
+            &:hover
+                color: $colorStylish
+
+
+

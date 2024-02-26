@@ -1,0 +1,36 @@
+@import "vars"
+    
+    
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+a
+    text-decoration: none
+
+
+.center
+    padding-left: calc(50% - ($widthContent / 2 + $sidePadding))
+    padding-right: calc(50% - ($widthContent / 2 + $sidePadding))
+
+.container
+    padding: 0 $sidePadding
+
+body
+    font-family: 'Lato', sans-serif
+    min-height: 100vh
+    position: relative
+    background-color: #fff
+
+
+@import "header"
+@import "navigation"
+@import "crumbs"
+@import "index"
+@import "checkout"
+@import "cart"
+@import "product"
+@import "single"
+
+@import "footer"

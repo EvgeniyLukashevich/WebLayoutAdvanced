@@ -1,0 +1,33 @@
+@import "vars"
+@import "mixins"
+@import "extends"
+
+.crumbs
+    &__background
+        background-color: #f8f3f4
+    &__area
+        display: flex
+        justify-content: space-between
+    &__title
+        padding: 65px 0
+        @include text3(24px, 900, $colorStylish)
+    &__path-box
+        display: flex
+        align-items: center
+    &__path
+        list-style-type: none
+        display: flex
+        &__item
+            &-current
+                padding-top: 2px
+                @include text3(14px, 700, $colorStylish)
+            &:not(:last-child):after
+                content: "/"
+                padding-left: 2px
+                padding-right: 4px
+            &__link
+                padding: 48px 0
+                @include text3(14px, 300, #636363)
+                transition: $transition
+                &:hover
+                    color: $colorStylish
